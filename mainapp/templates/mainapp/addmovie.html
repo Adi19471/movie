@@ -1,0 +1,40 @@
+{% extends 'mainapp/base.html' %}
+
+{% load static %}
+{% load crispy_forms_tags %}
+
+
+
+
+{% block content %}
+
+
+<style>
+
+    form ,i{
+        background: orange;
+        font-family: Arial, Helvetica, sans-serif;
+        margin: -20px 100px;
+    }
+</style>
+<h1 style="border-color: lightseagreen;text-align: center;color:lime;">ADDPAGE</h1>
+
+<div class="container">
+    <div class="card-content">
+        <div class="text-center">{{ controller }}</div>
+    </div>
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        {{ i| crispy }}
+       
+        <input type="submit" class="btn btn-danger" value="submit">
+        <a href="{% url 'home' %}" class="btn btn-primary">Home</a>
+        <a href="{% url 'add_movies' %}" class="btn btn-primary">Cancel</a>
+         
+    </form>
+    
+</div>
+
+
+{% endblock %}

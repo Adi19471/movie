@@ -1,0 +1,50 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<h1 style="text-align: center;position:initial;color: deeppink;box-shadow:5px 6px rgb(76, 255, 76);">DJANGO DEVELOPER
+    CHINNA SITE RATINGS</h1>
+
+
+
+<div class="container">
+
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                {% for i in movie %}
+                <div class="col-sm-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="text-center">
+                                <img src="{{i.image}}" alt="no.images" class="img-thumbnail"
+                                    style="border-radius:10px 18px 10px 2px;width:600px;height:250px;"><br>
+                                <div class="text-start">
+                                    <strong
+                                        style="border-radius: 10%;background: rgb(168, 153, 157);color: rgb(236, 227, 232);">TITLE
+                                        NAME:=){{i.name}}</strong><br>
+                                  
+                                     <div>
+                                    <a href="{% url 'detaile' i.id %}">Read More</a>
+                                </div>
+                                    <h6>CAST =:){{i.cast}}</h6>
+                                    <h6>RELAESE DATE=:){{i.release_date}}</h6>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+
+
+{% endblock %}

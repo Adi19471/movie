@@ -1,0 +1,28 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+
+<div class="container">
+    <div class="card">
+        <div class="card-body">
+            <div class="text-center">Login to Your account</div>
+            <form action="" method="POST">
+            {% csrf_token %}
+            <label for="username">Username</label>
+            <input type="text" placeholder="Enter Your login ID" name='username'><br>
+            <label for="password">Passwrord</label>
+            <input type="password" value="password" placeholder="Enter Your password" name="password"> 
+            
+            {% if error %}
+            <i style="color: cadetblue;">{{error}}</i>
+            {% endif %}
+            <br>
+            <button class="btn btn-outline-primary"><input type="submit" value="submit"></button>
+            </form>
+        </div>
+    </div>
+
+</div>
+  
+{% endblock content %}
+

@@ -1,0 +1,80 @@
+{% extends 'mainapp/base.html' %}
+
+{% block content %}
+{% load static %}
+
+<style>
+    .detaile{
+        color: black;
+        font-family: monospace;
+        background-color: rgba(123, 123, 167, 0.596);
+    }
+    .detaile p{
+        color: rgb(254, 254, 255);
+        text-align: justify;
+        font-variant: small-caps;
+    }
+
+</style>
+
+<div class="jumbotron">
+    <div class="container">
+
+        <center style="margin-left: 620px;position:fixed;color:darkorange;background-color:#ffff;font-size:2px")>
+            <button class="btn btn-secondary"><a href="{% url 'add_movies' %}" class="btn btn-success">ADDNEW</a></button>
+            <button class="btn btn-secondary"><a href="{% url 'home' %}" class="btn btn-warning">HOME_PAGE</a></button>
+            <button class="btn btn-outline-dark"><a href="{% url 'edit_movies' movie.id %}">EDIT_THIS</a></button>
+            <button class="btn btn-outline-info"><a href="{% url 'delete_movie' movie.id %}">DELETE_THIS</a></button>
+        </center>
+
+<div class="detaile">
+<h4>Movie Name:-{{movie.name}}</h4>
+<h4>Movie Director:{{movie.directory}}</h4>
+<h4>Movie Case:-{{movie.cast}}</h4>
+<h4>Movie Description:-<p>{{movie.description}}</p></h4>
+<h4>Movie Relese Date:- {{movie.release_date}}</h4>
+<h4>Movie Rating:-{{movie.avaragerating}}</h4>
+</div>
+<div class="col-md-8">
+
+<img src="{{movie.image}}" alt="movies name images" class="img-thumbnail"
+                                style="width:1100px;height:300px">
+            
+                            </div>
+                            
+
+</div>
+</div>
+
+{% endblock %}
+<!-- <div class="container">
+    <div class="jumbotron">
+        <div class="display-8">
+            <div class="card">
+                <div class="row">
+                    <div class="card-body">
+                        <div class="col-mt-5">
+                            <img src="{{movie.image}}" alt="movies name images" class="img-thumbnail"
+                                style="width: 14%;height: 30%;">
+                        </div>
+                        <div class="col-md-8">
+                            <h3 class="text-center">
+                                <h6 style="color: rgb(53, 121, 7); text-align: center;">Name of actor:=){{movie.name }}
+                                </h6>
+                            </h3> -->
+
+                            <!-- <a href="{% url 'edit_movie'  movie.id %}">Edit movie</a>
+                            <a href="{% url 'delete_movie'  movie.id %}">Edit movie</a> -->
+<!--                        <a href="{% url 'delete_movie'  movie.id %}">Edit movie</a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 
+
+</div>-->
+
+
